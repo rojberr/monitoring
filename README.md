@@ -1,3 +1,4 @@
 # monitoring
 
-mycluster --agents 3 -p "30000-30099:30000-30099@server:0"
+k3d cluster create mycluster --agents 3 --api-port 6550
+k3d cluster edit mycluster --port-add "30000-32767:30000-32767@server:0"
