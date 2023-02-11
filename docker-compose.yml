@@ -1,19 +1,24 @@
 version: "2"
 
 services:
-  rng:
-    image: dockercoins/rng:v0.1
-
-  hasher:
-    image: dockercoins/hasher:v0.1
-
-  webui:
-    image: dockercoins/webui:v0.1
+  alertmanager:
+    image: prom/alertmanager:latest
     ports:
-    - "8000:80"
+      - "9093:9093"
 
-  redis:
-    image: redis
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
 
-  worker:
-    image: dockercoins/worker:v0.1
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+
+  content-forethought:
+     image:  content-forethought
+     ports:
+       - "8080:8080"
