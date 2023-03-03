@@ -1,0 +1,22 @@
+grafana:
+  grafana:
+
+#    initContainers:
+#      - name: grafana-dashboards
+#        image: xxx:1.0.0
+#        imagePullPolicy: Never
+#        command: [ 'sh', '-c', 'cp /*.json /var/lib/grafana/dashboards/' ]
+#        volumeMounts:
+#          - name: dashboards
+#            mountPath: /var/lib/grafana/dashboards
+#        securityContext:
+#          runAsUser: 0
+#          runAsNonRoot: false
+
+#    extraVolumes:
+#      - name: dashboards
+#        emptyDir: { }
+#
+#    extraVolumeMounts:
+#      - name: dashboards
+#        mountPath: /var/lib/grafana/dashboards

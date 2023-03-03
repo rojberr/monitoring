@@ -16,3 +16,5 @@ helm repo add giantswarm-playground https://giantswarm.github.io/giantswarm-play
 helm repo add teleport https://charts.releases.teleport.dev
  helm repo add robusta https://robusta-charts.storage.googleapis.com && helm repo update
 helm repo update
+
+grafana-cli admin reset-admin-password admin
